@@ -14,7 +14,7 @@
                                                 font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
                                                 /* Khung Artboard chính */
                                                 .banner {
-                                                    width: 90%;
+                                                    width: 100%;
                                                     max-width: 960px;
                                                     aspect-ratio: 16 / 10;
                                                     background-color: #263b27;
@@ -77,4 +77,61 @@
                                                 .btn-login:active {
                                                     transform: scale(0.98);
                                                 }
+                                            }
+                                            /* ===================================================
+1. GIAO DIỆN MẶC ĐỊNH (MOBILE - SMARTPHONE)
+=================================================== */
+                                            
+                                            .body {
+                                                width: 100%;
+                                                min-height: 100dvh;
+                                                background-color: #274029;
+                                                /* Nền xanh rêu */
+                                                display: flex;
+                                                flex-direction: column;
+                                                justify-content: center;
+                                                align-items: center;
+                                                padding: 1.5rem;
+                                                text-align: center;
+                                            }
+                                            
+                                            .sub-title {
+                                                color: #62bfe6;
+                                                font-size: 1.1rem;
+                                                font-weight: 800;
+                                                letter-spacing: 0.1em;
+                                                text-transform: uppercase;
+                                                margin-bottom: 0.75rem;
+                                            }
+                                            
+                                            .main-title {
+                                                color: #e5a93b;
+                                                font-size: 1.85rem;
+                                                font-weight: 900;
+                                                letter-spacing: 0.05em;
+                                                text-transform: uppercase;
+                                                margin-bottom: 2.5rem;
+                                            }
+                                            
+                                            .btn-login {
+                                                display: inline-block;
+                                                width: 80%;
+                                                max-width: 15rem;
+                                                padding: 0.9rem 1.25rem;
+                                                background-color: #d80000;
+                                                color: #ffffff;
+                                                font-size: 1.1rem;
+                                                font-weight: 800;
+                                                text-transform: uppercase;
+                                                border: none;
+                                                border-radius: 3rem;
+                                                box-shadow: 0 0.4rem 1rem rgba(0, 0, 0, 0.45);
+                                                cursor: pointer;
+                                                text-decoration: none;
+                                                transition: transform 0.2s ease, background-color 0.2s ease;
+                                            }
+                                            
+                                            .btn-login:active {
+                                                transform: scale(0.96);
+                                                background-color: #b30000;
                                             }

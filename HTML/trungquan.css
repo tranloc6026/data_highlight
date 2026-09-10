@@ -18,7 +18,7 @@ body {
 /* Khung Artboard xanh rêu */
 
 .container {
-    width: 90%;
+    width: 100%;
     max-width: 960px;
     aspect-ratio: 16 / 10;
     background-color: #243b27;
