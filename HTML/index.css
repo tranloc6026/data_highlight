@@ -1,0 +1,80 @@
+                                            * {
+                                                box-sizing: border-box;
+                                                margin: 0;
+                                                padding: 0;
+                                            }
+                                            
+                                            body {
+                                                min-height: 100vh;
+                                                display: flex;
+                                                justify-content: center;
+                                                align-items: center;
+                                                background-color: #1a1a1a;
+                                                /* Nền tối bên ngoài */
+                                                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                                                /* Khung Artboard chính */
+                                                .banner {
+                                                    width: 90%;
+                                                    max-width: 960px;
+                                                    aspect-ratio: 16 / 10;
+                                                    background-color: #263b27;
+                                                    /* Màu xanh rêu của background */
+                                                    display: flex;
+                                                    flex-direction: column;
+                                                    justify-content: center;
+                                                    align-items: center;
+                                                    text-align: center;
+                                                    padding: 24px;
+                                                    border: 1px solid rgba(255, 255, 255, 0.2);
+                                                }
+                                                /* Dòng chữ: DATA TEAM HIGHLIGHT */
+                                                .sub-title {
+                                                    font-size: clamp(1.25rem, 3vw, 2.2rem);
+                                                    font-weight: 900;
+                                                    color: #6ed0e0;
+                                                    /* Xanh Ngọc */
+                                                    text-transform: uppercase;
+                                                    letter-spacing: 1px;
+                                                    margin-bottom: 8px;
+                                                }
+                                                /* Dòng chữ: EMES ESCAPE ROOM */
+                                                .main-title {
+                                                    font-size: clamp(1.75rem, 4.5vw, 3.2rem);
+                                                    font-weight: 900;
+                                                    color: #f5b942;
+                                                    /* vàng cam */
+                                                    text-transform: uppercase;
+                                                    letter-spacing: 1px;
+                                                    margin-bottom: 36px;
+                                                }
+                                                /* Nút: ĐĂNG NHẬP */
+                                                .btn-login {
+                                                    background-color: #e60000;
+                                                    /* màu đỏ */
+                                                    color: #ffffff;
+                                                    font-size: 25px !important;
+                                                    /* Chiều rộng cố định nút */
+                                                    /* tăng kích cỡ chữ 1.4rem */
+                                                    font-family: 'Montserrat', Arial, sans-serif;
+                                                    max-width: 80%;
+                                                    height: 40px !important;
+                                                    width: 250px !important;
+                                                    /* Chiều cao nút */
+                                                    display: flex !important;
+                                                    justify-content: center;
+                                                    align-items: center;
+                                                    border: none;
+                                                    border-radius: 9999px;
+                                                    cursor: pointer;
+                                                    text-decoration: none;
+                                                    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.4);
+                                                    transition: background-color 0.2s, transform 0.1s;
+                                                }
+                                                .btn-login:hover {
+                                                    background-color: #c40000;
+                                                    transform: scale(1.03);
+                                                }
+                                                .btn-login:active {
+                                                    transform: scale(0.98);
+                                                }
+                                            }
