@@ -5,11 +5,12 @@
 }
 
 body {
+    width: 100%;
     min-height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #1e1e1e;
+    background-color: #263b27;
     /* Nền xám đen bên ngoài như Photoshop */
     font-family: 'Montserrat', Arial, sans-serif;
 }
@@ -19,17 +20,17 @@ body {
 
 .container {
     width: 100%;
-    max-width: 960px;
-    aspect-ratio: 16 / 10;
-    background-color: #243b27;
-    /* Màu nền xanh rêu */
+    max-width: 100vh;
+    background-color: #263b27;
+    /* Màu xanh rêu của background */
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
-    padding: 60px 24px 50px;
     text-align: center;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+    padding: 24px;
+    gap: 28px;
+    /* Tự động tách đều khoảng cách giữa tất cả các mục */
 }
 
 
@@ -39,7 +40,7 @@ body {
     font-size: clamp(1.8rem, 3.8vw, 3rem);
     font-weight: 900;
     color: #92b7ca;
-    /* Màu xanh phấn viền sáng */
+    /* Màu xanh phấn viền sásng */
     text-transform: uppercase;
     letter-spacing: 1.5px;
 }
