@@ -39,10 +39,11 @@ body {
 .title {
     font-size: clamp(1.8rem, 3.8vw, 3rem);
     font-weight: 900;
-    color: #92b7ca;
+    color: #ffffff;
     /* Màu xanh phấn viền sásng */
     text-transform: uppercase;
     letter-spacing: 1.5px;
+    text-shadow: 0 0 5px #70d6ff, 0 0 10px #70d6ff, 0 0 20px #70d6ff, 0 0 40px #00a8ff;
 }
 
 
@@ -52,6 +53,7 @@ body {
     display: inline-flex;
     justify-content: center;
     align-items: center;
+    margin-top: 40px;
     width: 480px;
     max-width: 90%;
     height: 76px;
@@ -78,16 +80,46 @@ body {
 }
 
 
-/* Dòng chữ dưới cùng: Gửi thông tin lên Google Drive */
+/* Container bao bọc 2 liên kết, giúp chia sang 2 bên */
+
+.footer-links-container {
+    display: flex;
+    flex-direction: column;
+    /* Đổi sang xếp theo chiều dọc */
+    align-items: center;
+    width: 100%;
+    margin-top: 40px;
+    gap: 30px;
+    padding: 0 20px;
+    /* Thụt vào một chút để không dính viền */
+    box-sizing: border-box;
+}
+
+
+/* Định dạng cho từng link */
 
 .footer-link {
-    font-size: clamp(1.1rem, 2vw, 1.5rem);
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    /* Khoảng cách giữa icon và chữ */
+    font-size: clamp(1rem, 1.5vw, 1.3rem);
     font-weight: 700;
     color: #92b7ca;
     text-decoration: none;
     cursor: pointer;
     transition: color 0.2s, opacity 0.2s;
 }
+
+
+/* Kích thước icon (chỉnh riêng) */
+
+.footer-link i {
+    font-size: 1.1em;
+}
+
+
+/* Hiệu ứng khi hover */
 
 .footer-link:hover {
     color: #ffffff;
