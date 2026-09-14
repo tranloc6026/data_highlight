@@ -70,6 +70,10 @@ body {
     transition: transform 0.15s ease, background-color 0.2s;
 }
 
+.btn-confirm {
+    background-color: #28a745;
+}
+
 .btn-main:hover {
     background-color: #cb0000;
     transform: scale(1.02);
