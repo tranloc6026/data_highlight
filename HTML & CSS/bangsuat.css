@@ -1,136 +1,165 @@
-    * {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-}
-
-body {
-    width: 100%;
-    min-height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: #263b27;
-    /* Nền tối bên ngoài */
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    /* Khung Artboard chính */
-    .banner {
-        width: 100%;
-        max-width: 100vh;
-        background-color: #263b27;
-        /* Màu xanh rêu của background */
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        text-align: center;
-        padding: 24px;
-    }
-    .table-container {
-        width: 100%;
-        /* Điều chỉnh độ rộng tùy ý */
-        max-height: 100vh;
-        overflow-y: auto;
-        border: 2px solid #000;
-    }
-    .custom-table {
-        width: 100%;
-        border-collapse: separate;
-        /* Đổi từ collapse sang separate */
-        border-spacing: 0;
-        /* Giữ các ô khít nhau y hệt collapse */
-        text-align: center;
-    }
-    /* Tiêu đề bảng màu cam */
-    .custom-table th {
-        background-color: #ff0000;
-        color: white;
-        font-weight: 800;
-        font-size: 15px;
-        padding: 6px 4px;
-        border: 1px solid #000;
-        position: sticky;
-        top: 0;
-        z-index: 10;
-        /* Đảm bảo tiêu đề luôn nổi lên trên các dòng chữ bên dưới */
-    }
-    /* Chiều rộng từng cột */
-    .custom-table th.col-suat,
-    .custom-table td.col-suat {
-        width: 75%;
-        text-align: left;
-        padding-left: 10px;
-    }
-    .custom-table th.col-status,
-    .custom-table td.col-status {
-        width: 100%;
-        text-align: center;
-    }
-    /* Các dòng dữ liệu nền xanh nhạt viền đen */
-    .custom-table td {
-        background-color: #dce7f5;
-        height: 22px;
-        border: 1px solid #000;
-        padding: 2px 4px;
-        font-size: 12px;
-    }
-    /* Tùy chỉnh ô checkbox */
-    .custom-table input[type="checkbox"] {
-        cursor: pointer;
-        width: 14px;
-        height: 14px;
-        accent-color: #0066cc;
-    }
-    /* Chiều rộng và kiểu chữ cho cột đếm số lượng */
-    .custom-table th.col-count {
-        width: 15%;
-        text-align: center;
-        font-weight: bold;
-        color: white;
-        /* Màu chữ đỏ nổi bật */
-        font-size: 14px;
-    }
-    .custom-table td.col-count {
-        width: 15%;
-        text-align: center;
-        font-weight: bold;
-        color: black;
-        /* Màu chữ đỏ nổi bật */
-        font-size: 14px;
-    }
-    /* NÚT BẤM SAVE VÀ RESET */
-    .action-buttons {
-        margin: 15px auto;
-        text-align: center;
-        display: flex;
-        justify-content: center;
-        gap: 12px;
-    }
-    #btn-save {
-        background-color: #ff0000;
-        color: #fff;
-        border: 1px solid #000;
-        font-weight: bold;
-        padding: 10px 24px;
-        font-size: 14px;
-        cursor: pointer;
-        border-radius: 4px;
-        transition: opacity 0.2s;
-    }
-    #btn-save:hover {
-        opacity: 0.85;
-    }
-    #btn-reset {
-        background-color: #555;
-        color: #fff;
-        border: 1px solid #000;
-        font-weight: bold;
-        padding: 10px 18px;
-        font-size: 14px;
-        cursor: pointer;
-        border-radius: 4px;
-        transition: opacity 0.2s;
-    }
-    #btn-reset:hover {
-        background-color: #333;
-    }
+                        * {
+                        box-sizing: border-box;
+                        margin: 0;
+                        padding: 0;
+                    }
+                    
+                    body {
+                        width: 100%;
+                        min-height: 100vh;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        background-color: #263b27;
+                        /* Nền tối bên ngoài */
+                        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                        /* Khung Artboard chính */
+                        .banner {
+                            width: 100%;
+                            max-width: 100vh;
+                            background-color: #263b27;
+                            /* Màu xanh rêu của background */
+                            display: flex;
+                            flex-direction: column;
+                            justify-content: center;
+                            align-items: center;
+                            text-align: center;
+                            padding: 24px;
+                        }
+                        .table-container {
+                            width: 100%;
+                            /* Điều chỉnh độ rộng tùy ý */
+                            max-height: 100vh;
+                            overflow-y: auto;
+                            border: 2px solid #000;
+                        }
+                        .custom-table {
+                            width: 100%;
+                            border-collapse: separate;
+                            /* Đổi từ collapse sang separate */
+                            border-spacing: 0;
+                            /* Giữ các ô khít nhau y hệt collapse */
+                            text-align: center;
+                        }
+                        /* Tiêu đề bảng màu cam */
+                        .custom-table th {
+                            background-color: #ff0000;
+                            color: white;
+                            font-weight: 800;
+                            font-size: 15px;
+                            padding: 6px 4px;
+                            border: 1px solid #000;
+                            position: sticky;
+                            top: 0;
+                            z-index: 10;
+                            /* Đảm bảo tiêu đề luôn nổi lên trên các dòng chữ bên dưới */
+                        }
+                        /* Chiều rộng từng cột */
+                        .custom-table th.col-suat,
+                        .custom-table td.col-suat {
+                            width: 75%;
+                            text-align: left;
+                            padding-left: 10px;
+                        }
+                        .custom-table th.col-status,
+                        .custom-table td.col-status {
+                            width: 100%;
+                            text-align: center;
+                        }
+                        /* Các dòng dữ liệu nền xanh nhạt viền đen */
+                        .custom-table td {
+                            background-color: #dce7f5;
+                            height: 22px;
+                            border: 1px solid #000;
+                            padding: 2px 4px;
+                            font-size: 12px;
+                        }
+                        /* Tùy chỉnh ô checkbox */
+                        .custom-table input[type="checkbox"] {
+                            cursor: pointer;
+                            width: 14px;
+                            height: 14px;
+                            accent-color: #0066cc;
+                        }
+                        /* Chiều rộng và kiểu chữ cho cột đếm số lượng */
+                        .custom-table th.col-count {
+                            width: 15%;
+                            text-align: center;
+                            font-weight: bold;
+                            color: white;
+                            /* Màu chữ đỏ nổi bật */
+                            font-size: 14px;
+                        }
+                        .custom-table td.col-count {
+                            width: 15%;
+                            text-align: center;
+                            font-weight: bold;
+                            color: black;
+                            /* Màu chữ đỏ nổi bật */
+                            font-size: 14px;
+                        }
+                        /* NÚT BẤM SAVE VÀ RESET */
+                        .action-buttons {
+                            margin: 15px auto;
+                            text-align: center;
+                            flex-direction: column;
+                            display: flex;
+                            justify-content: center;
+                            gap: 12px;
+                        }
+                        #btn-save {
+                            background-color: #ff0000;
+                            color: #fff;
+                            border: 1px solid #000;
+                            font-weight: bold;
+                            padding: 10px 24px;
+                            font-size: 14px;
+                            cursor: pointer;
+                            border-radius: 4px;
+                            transition: opacity 0.2s;
+                        }
+                        #btn-save:hover {
+                            opacity: 0.85;
+                        }
+                        #btn-reset {
+                            background-color: #555;
+                            color: #fff;
+                            border: 1px solid #000;
+                            font-weight: bold;
+                            padding: 10px 18px;
+                            font-size: 14px;
+                            cursor: pointer;
+                            border-radius: 4px;
+                            transition: opacity 0.2s;
+                        }
+                        #btn-reset:hover {
+                            background-color: #333;
+                        }
+                        @media (max-width: 768px) {
+                            .table-container {
+                                width: 100%;
+                                overflow-x: auto;
+                                /* cho phép cuộn ngang bảng nếu quá rộng */
+                                -webkit-overflow-scrolling: touch;
+                            }
+                            /* Đảm bảo chữ trong th/ td không bị vỡ quá nhở */
+                            th,
+                            td {
+                                white-space: nowrap;
+                                /* Tráng chữ ngắt dòng vụn vặt */
+                                padding: 8px 12px;
+                                font-size: 13px;
+                            }
+                            /* Đưa nhóm nút bấm xuống dưới bảng và dàn ngang */
+                            .button-group {
+                                width: 100%;
+                                flex-direction: row;
+                                /* Trên điện thoại, 2 nút nằm cạnh nhau */
+                                margin-top: 15px;
+                            }
+                            .button-group button {
+                                flex: 1;
+                                /* hai nút chia đều chiều rộng màn hình */
+                                padding: 12px;
+                            }
+                        }
