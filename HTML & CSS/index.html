@@ -184,11 +184,33 @@
             const pass = document.getElementById('password').value;
 
             // Ví dụ: tài khoản là "admin", mật khẩu là "123456" 
-            //TRUNG QUÂN
-            if (user === "trungquan" && pass === "123456") {
+            //letan
+            if (user === "admin" && pass === "0000") {
                 alert("Đăng nhập thành công!");
-                window.location.href = "./work.html"; // Chuyển sang trang mới
-            } else {
+                window.location.href = "./letan.html"; // Chuyển sang trang mới
+            }
+            //TRUNG QUÂN
+            else if (user === "trungquan" && pass === "1111") {
+                alert("Đăng nhập thành công!");
+                window.location.href = "./trungquan.html"; // Chuyển sang trang mới
+            }
+            //XUÂN HIẾU
+            else if (user === "xuanhieu" && pass === "2222") {
+                alert("Đăng nhập thành công!");
+                window.location.href = "./xuanhieu.html"; // Chuyển sang trang mới
+            }
+            //SONG UYÊN
+            else if (user === "songuyen" && pass === "3333") {
+                alert("Đăng nhập thành công!");
+                window.location.href = "./songuyen.html"; // Chuyển sang trang mới
+            }
+            //THANHLIEM(KIỂM DUYỆT)
+            else if (user === "thanhliem" && pass === "6026") {
+                alert("Đăng nhập thành công!");
+                window.location.href = "./thanhliem.html"; // Chuyển sang trang mới
+            }
+            // SAI TÀI KHOẢN HOẶC MẬT KHẨU
+            else {
                 alert("Sai tên đăng nhập hoặc mật khẩu!");
             }
         }
