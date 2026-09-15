@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="bangsuat.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <title>HOÀN THÀNH CÔNG VIỆC</title>
+</head>
+
+<body>
+    <div class="table-container">
+        <table class="custom-table">
+            <thead>
+                <tr>
+                    <th class="col-suat">SONG UYÊN | THÔNG TIN SUẤT CHƠI</th>
+                    <th class="col-status">HOÀN THÀNH</th>
+                    <th class="col-count">SỐ LƯỢNG HL (<span id="total-count">0</span>)</th>
+                </tr>
+            </thead>
+            <tbody id="table-body">
+                <!-- Các dòng này sẽ được tạo tự động từ Java Script bên dưới -->
+            </tbody>
+        </table>
+    </div>
+
+    <div class="action-buttons">
+        <button id="btn-save" onclick="saveData()">SAVE HIGHLIGHT</button>
+    </div>
+
+    <script>
+        // Tạo 40 dòng tự động
+        const tbody = document.getElementById('table-body');
+        const totalRows = 40;
+        const STORAGE_KEY = 'bang_suat_song_uyen';
+
+        for (let i = 1; i <= totalRows; i++) {
+            const tr = document.createElement('tr');
+            tr.innerHTML = `
+                <!-- Thêm contenteditable="true" để click vào là gõ được -->
+                <td class="col-suat" contenteditable="true" spellcheck="false"> Suất chơi ${i}</td>
+                <td class="col-status">
+                    <input type="checkbox">
+                </td>
+             `;
+            tbody.appendChild(tr);
+        }
+        // 1. Hàm tạo bảng và tải lại dữ liệu đã lưu (nếu có)
+        function renderTable() {
+            tbody.innerHTML = '';
+            const savedData = JSON.parse(localStorage.getItem(STORAGE_KEY)) || [];
+
+            for (let i = 1; i <= totalRows; i++) {
+                // Lấy lại dữ liệu cũ hoặc dùng giá trị mặc định
+                const currentText = savedData[i - 1] ? savedData[i - 1].name : `Suất chơi ${i}`;
+                const isChecked = savedData[i - 1] ? savedData[i - 1].checked : false;
+
+                const tr = document.createElement('tr');
+                tr.innerHTML = `
+        <td class="col-suat" contenteditable="true" spellcheck="false">${currentText}</td>
+        <td class="col-status">
+          <input type="checkbox" ${isChecked ? 'checked' : ''}>
+        </td>
+      `;
+                tbody.appendChild(tr);
+            }
+        }
+        // 2. Hàm bấm nút "LƯU DỮ LIỆU"
+        function saveData() {
+            const rows = tbody.querySelectorAll('tr');
+            const dataToSave = [];
+
+            rows.forEach(tr => {
+                const name = tr.querySelector('.col-suat').innerText.trim();
+                const checked = tr.querySelector('input[type="checkbox"]').checked;
+                dataToSave.push({
+                    name,
+                    checked
+                });
+            });
+
+            localStorage.setItem(STORAGE_KEY, JSON.stringify(dataToSave));
+            alert('Đã lưu thành công!');
+        }
+
+        // 3. Hàm bấm nút "ĐẶT LẠI BAN ĐẦU" (Xóa sạch bộ nhớ lưu)
+        function resetData() {
+            if (confirm('Bạn có chắc chắn muốn đặt lại toàn bộ bảng về mặc định?')) {
+                localStorage.removeItem('bang_suat_song_uyen');
+                renderTable(); // Vẽ lại 50 suất chơi sạch từ đầu
+            }
+        }
+        // Khởi chạy khi mở trang
+        renderTable();
+
+        // Hàm tự động quét và đánh số thứ tự các ô đã tích hoàn thành
+        function updateCompletedCount() {
+            const rows = tbody.querySelectorAll('tr');
+            let count = 0;
+
+            rows.forEach(tr => {
+                const checkbox = tr.querySelector('input[type="checkbox"]');
+                const countCell = tr.querySelector('.col-count');
+
+                if (checkbox.checked) {
+                    count++;
+                    countCell.innerText = count; // Tự gán số: 1, 2, 3...
+                } else {
+                    countCell.innerText = ''; // Chưa tích thì để trống
+                }
+            });
+
+            // Cập nhật tổng số lên tiêu đề cột nếu có span #total-count
+            const totalSpan = document.getElementById('total-count');
+            if (totalSpan) {
+                totalSpan.innerText = count;
+            }
+        }
+
+        // Cập nhật lại hàm renderTable
+        function renderTable() {
+            tbody.innerHTML = '';
+            const savedData = JSON.parse(localStorage.getItem(STORAGE_KEY)) || [];
+
+            for (let i = 1; i <= totalRows; i++) {
+                const currentText = savedData[i - 1] ? savedData[i - 1].name : `Suất chơi ${i}`;
+                const isChecked = savedData[i - 1] ? savedData[i - 1].checked : false;
+
+                const tr = document.createElement('tr');
+                tr.innerHTML = `
+        <td class="col-suat" contenteditable="true" spellcheck="false">${currentText}</td>
+        <td class="col-status">
+          <input type="checkbox" onchange="updateCompletedCount()" ${isChecked ? 'checked' : ''}>
+        </td>
+        <td class="col-count"></td>
+      `;
+                tbody.appendChild(tr);
+            }
+
+            // Tính toán số lượng ngay khi tải trang
+            updateCompletedCount();
+        }
+    </script>
+
+</body>
+
+</html>
