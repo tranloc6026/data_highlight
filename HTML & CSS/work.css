@@ -129,3 +129,56 @@ body {
     color: #ffffff;
     text-decoration: underline;
 }
+
+
+/* Nút Restart cố định góc dưới cùng bên phải */
+
+.btn-reset {
+    position: fixed;
+    /* Xóa khung viền và nền mặc định của thẻ button */
+    background: transparent;
+    border: none;
+    outline: none;
+    bottom: 24px;
+    right: 24px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    /* Màu sắc & Font chữ */
+    color: #92b7ca;
+    font-family: inherit;
+    font-weight: 600;
+    font-size: 20px;
+    text-decoration: none;
+    /* Hiệu ứng phát sáng neon */
+    text-shadow: 0 0 6px rgba(26, 86, 255, 0.8), 0 0 15px rgba(26, 86, 255, 0.5);
+    cursor: pointer;
+    z-index: 9999;
+    transition: all 0.25s ease-in-out;
+}
+
+
+/* Icon Power */
+
+.btn-reset i {
+    font-size: 30px;
+    /* kích thước lớn của icon nổi bật */
+    filter: drop-shadow(0 0 8px #1a56ff);
+    transition: transform 0.3s ease;
+}
+
+
+/* Hiệu ứng khi rê chuột HOVER */
+
+.btn-reset:hover {
+    color: #5584ff;
+    text-shadow: 0 0 10px rgba(85, 132, 255, 1), 0 0 25px rgba(26, 86, 255, 0.8);
+    transform: translateY(-2px);
+}
+
+
+/* Hiệu ứng khi bấm vào Active */
+
+.btn-reset:active {
+    transform: scale(0.95);
+}

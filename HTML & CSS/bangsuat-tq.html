@@ -31,14 +31,12 @@
 
     <div class="action-buttons">
         <button id="btn-save" onclick="saveData()">SAVE HIGHLIGHT</button>
-        <!-- <button id="btn-reset" onclick="resetData()">RESET</button> -->
-
     </div>
 
     <script>
-        // Tạo 40 dòng tự động
+        // Tạo 50 dòng tự động
         const tbody = document.getElementById('table-body');
-        const totalRows = 40;
+        const totalRows = 50;
         const STORAGE_KEY = 'bang_suat_trung_quan';
 
         for (let i = 1; i <= totalRows; i++) {
@@ -93,11 +91,10 @@
         // 3. Hàm bấm nút "ĐẶT LẠI BAN ĐẦU" (Xóa sạch bộ nhớ lưu)
         function resetData() {
             if (confirm('Bạn có chắc chắn muốn đặt lại toàn bộ bảng về mặc định?')) {
-                localStorage.removeItem(STORAGE_KEY);
-                renderTable();
+                localStorage.removeItem('bang_suat_trung_quan');
+                renderTable(); // Vẽ lại 50 suất chơi sạch từ đầu
             }
         }
-
         // Khởi chạy khi mở trang
         renderTable();
 

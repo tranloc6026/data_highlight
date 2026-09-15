@@ -33,8 +33,21 @@
             <a href="https://drive.google.com/drive/folders/11EmKCQgRWE8w0CIz8pyAexafAlIwsJiA?usp=sharing" class="footer-link">
                 <i class="fa-brands fa-google-drive"></i> Kiểm duyệt thông tin
             </a>
+
+            <button class="btn-reset" id="btn-reset" onclick="resetData()"><i class="fa-solid fa-power-off"></i> Restart</button>
         </div>
     </div>
+
+    <!-- 3. Hàm bấm nút "ĐẶT LẠI BAN ĐẦU" (Xóa sạch bộ nhớ lưu) -->
+    <script>
+        function resetData() {
+            if (confirm('Bạn có chắc chắn muốn đặt lại bảng suất về ban đầu?')) {
+                localStorage.removeItem('bang_suat_trung_quan');
+                localStorage.removeItem('bang_suat_song_uyen');
+                alert('Đã đặt lại dữ liệu ban đầu thành công!');
+            }
+        }
+    </script>
 </body>
 
 </html>
